@@ -53,6 +53,10 @@ img{
     height: auto;
 }
 
+.thumbnails{
+    max-width:50%;
+    height:auto;
+}
 
 #footer{
     margin-top:1vh;
