@@ -6,7 +6,7 @@
     background-color:#f4faff;
     text-align:center;
     margin:auto;
-    width:80vw;
+    width:100vw;
     height:100vh;
     display:flex;
 }
@@ -15,8 +15,8 @@
 {
     font-family: 'Roboto', sans-serif;
     background-color: #2C5F2D;
-    padding-right: 1.5vw;
-    margin-right:1vw;
+    padding-right: 1vw;
+    margin-right:0.5vw;
     
     
 }
@@ -25,13 +25,13 @@
 #main{
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
+    flex-grow:2;
 }
 
 li{
     padding-bottom: 10vh;
     list-style-type: none;  
     text-decoration: none;  
-    font-size: 25px;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -51,4 +51,45 @@ h2{
 img{
     max-width:100%;
     height: auto;
+}
+
+
+#footer{
+    margin-top:1vh;
+    padding-top:1.5vh;
+    text-align: center;
+    vertical-align:middle;
+    font-size: 20px;
+    font-weight:bold;
+    background-color: #2C5F2D;
+    color: white;
+}
+
+@media(max-width: 800px)
+{   
+    *{
+        margin:0;
+        padding:0;
+    }
+
+    #container{
+        flex-direction: column;
+        width:100vw;
+    }
+
+   
+
+    li{
+        font-size: 15px;
+        text-align:center;
+        vertical-align: middle;
+    }
+
+    .middle-link{
+        border-top: solid;
+        border-bottom: solid;
+        border-color: #f4faff;
+        border-width:3px;
+    }
+
 }
