@@ -2,6 +2,14 @@
 
 <html lang="en">
 <head>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AgroReports</title>
@@ -9,6 +17,13 @@
   <meta name="author" content="CabTheDeveloper">
 
   <link rel="stylesheet" href="styles.css?v=1.0">
+
+
+<script>
+  function togglePopup(){
+  document.getElementById("popup-1").classList.toggle("active");
+}
+</script>
 
 </head>
 
@@ -26,33 +41,128 @@
     <div id="main">
         <h2>AgroReports Media</h2>
         <div id="gallery">
-          <p>Here you can view the latest meetings as well as access transcripts</p>
+          <p>Here you can view the latest meetings as well as access transcripts</p><br>
           <div class ="item">
               <div id="item-title">Agriculture Meeting September 13,2020</div>
               <img class ="thumbnails" src="images/thumbnail.jpg"> <br>
-              Price: $50.00 USD<br> 
-              <input type="button" value="Download Video">
-              <input type="button" value="Download Transcript">
+              <input type="button" onclick="togglePopup()" value="Download Video">
+              <input type="button" onclick="togglePopup()"value="Download Transcript">
             </div>
             
             <div class ="item">
               <div id="item-title">Agriculture Meeting October 23,2020</div>
               <img class ="thumbnails" src="images/thumbnail.jpg"> <br> 
-              Price: $70.00 USD<br>
-              <input type="button" value="Download Video">
-              <input type="button" value="Download Transcript">
+              <input type="button" onclick="togglePopup()" value="Download Video">
+              <input type="button" onclick="togglePopup()" value="Download Transcript">
             </div>
 
             <div class ="item">
               <div id="item-title">Agriculture Meeting December 03,2020</div>
               <img class ="thumbnails" src="images/thumbnail.jpg"> <br> 
-              Price: $75.00 USD<br>
-              <input type="button" value="Download Video">
-              <input type="button" value="Download Transcript">
+              <input type="button" onclick="togglePopup()" value="Download Video">
+              <input type="button" onclick="togglePopup()" value="Download Transcript">
             </div>
 
           </div>
-
+          <!-- Popup Thingy -->
+        <div class="popup" id="popup-1">
+          <div class="overlay"></div>
+          <div class="content">
+            <div class="close-btn" onclick="togglePopup()">&times;</div>
+            <div class="container">
+              <div class="row">
+              <!-- You can make it whatever width you want. I'm making it full width
+              on <= small devices and 4/12 page width on >= medium devices -->
+              <div class="col-xs-12 col-md-4">
+              
+              
+              <!-- CREDIT CARD FORM STARTS HERE -->
+              <div class="panel panel-default credit-card-box">
+              <div class="panel-heading display-table" >
+              <div class="row display-tr" >
+              <h3 class="panel-title display-td" >Payment Details</h3>
+              <div class="display-td" >                            
+              <img class="img-responsive pull-right" src="images/paypal-stripe.png">
+              </div>
+              </div>                    
+              </div>
+              <div class="panel-body">
+              <form role="form" id="payment-form">
+              <div class="row">
+              <div class="col-xs-12">
+              <div class="form-group">
+              <label for="cardNumber">CARD NUMBER</label>
+              <div class="input-group">
+              <input 
+              type="tel"
+              class="form-control"
+              name="cardNumber"
+              placeholder="Valid Card Number"
+              autocomplete="cc-number"
+              required autofocus 
+              />
+              <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+              </div>
+              </div>                            
+              </div>
+              </div>
+              <div class="row">
+              <div class="col-xs-7 col-md-7">
+              <div class="form-group">
+              <label for="cardExpiry"><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline"></span> DATE</label>
+              <input 
+              type="tel" 
+              class="form-control" 
+              name="cardExpiry"
+              placeholder="MM / YY"
+              autocomplete="cc-exp"
+              required 
+              />
+              </div>
+              </div>
+              <div class="col-xs-5 col-md-5 pull-right">
+              <div class="form-group">
+              <label for="cardCVC">CV CODE</label>
+              <input 
+              type="tel" 
+              class="form-control"
+              name="cardCVC"
+              placeholder="CVC"
+              autocomplete="cc-csc"
+              required
+              />
+              </div>
+              </div>
+              </div>
+              <div class="row">
+              <div class="col-xs-12">
+              <div class="form-group">
+              <label for="couponCode">COUPON CODE</label>
+              <input type="text" class="form-control" name="couponCode" />
+              </div>
+              </div>                        
+              </div>
+              <div class="row">
+              <div class="col-xs-12">
+              <button class="btn btn-success btn-lg btn-block" type="submit">Click here to start download</button>
+              </div>
+              </div>
+              <div class="row" style="display:none;">
+              <div class="col-xs-12">
+              <p class="payment-errors"></p>
+              </div>
+              </div>
+              </form>
+              </div>
+              </div>            
+              <!-- CREDIT CARD FORM ENDS HERE -->
+              
+              
+              </div>            
+        </div>
+        <!-- End of Popup Thingy -->
+      
+    
     </div>
     </div>
     <div id="footer">
